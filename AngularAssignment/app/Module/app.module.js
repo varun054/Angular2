@@ -18,13 +18,14 @@ var dashboard_component_1 = require('../Component/Dashboard-Component/dashboard.
 var about_component_1 = require('../Component/About-Component/about.component');
 var contact_component_1 = require('../Component/Contact-Component/contact.component');
 var employee_component_1 = require('../Component/Employee-Component/employee.component');
+var empdetail_component_1 = require('../Component/Employee-Component/empdetail.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
-            declarations: [root_component_1.RootComponent, nav_component_1.NavComponent, dashboard_component_1.DashboardComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent, employee_component_1.EmployeeComponent],
+            declarations: [root_component_1.RootComponent, nav_component_1.NavComponent, dashboard_component_1.DashboardComponent, about_component_1.AboutComponent, contact_component_1.ContactComponent, employee_component_1.EmployeeComponent, empdetail_component_1.EmpdetailComponent],
             providers: [
                 app_routing_1.appRoutingProviders
             ],

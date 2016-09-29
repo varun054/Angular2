@@ -9,10 +9,11 @@ import { DashboardComponent }   from '../Component/Dashboard-Component/dashboard
 import { AboutComponent }   from '../Component/About-Component/about.component';
 import { ContactComponent }   from '../Component/Contact-Component/contact.component';
 import { EmployeeComponent }    from '../Component/Employee-Component/employee.component';
+import { EmpdetailComponent }    from '../Component/Employee-Component/empdetail.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing ],
-  declarations: [ RootComponent, NavComponent, DashboardComponent, AboutComponent, ContactComponent, EmployeeComponent ],
+  declarations: [ RootComponent, NavComponent, DashboardComponent, AboutComponent, ContactComponent, EmployeeComponent, EmpdetailComponent ],
   providers: [
     appRoutingProviders
   ],
