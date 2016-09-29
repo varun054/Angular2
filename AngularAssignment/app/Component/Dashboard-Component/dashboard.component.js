@@ -10,6 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var employee_service_1 = require('../../Services/employee.service');
+// import { SearchPipe } from './search-pipe';
+// import { SearchBox } from './searchbox';
 var DashboardComponent = (function () {
     function DashboardComponent(employeeService) {
         this.employeeService = employeeService;
@@ -21,11 +23,20 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         this.getEmpList();
     };
+    DashboardComponent.prototype.onClickRemove = function (emp) {
+        var index = this.employees.indexOf(emp);
+        this.employees.splice(index, 1);
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], DashboardComponent.prototype, "term", void 0);
     DashboardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'home-data',
             templateUrl: 'dashboard.component.html',
+            // directives: [SearchBox],
             providers: [employee_service_1.EmployeeService]
         }), 
         __metadata('design:paramtypes', [employee_service_1.EmployeeService])

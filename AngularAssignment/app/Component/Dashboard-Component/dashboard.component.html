@@ -5,7 +5,9 @@
       <div class="panel-heading">Dashboard</div>
       <div class="panel-body">
       <div class="row">
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+        <!-- <search-box (update)="term = $event"></search-box> -->
+        </div>
             <div class="col-sm-8">
                     <div class="pull-right"><a class="btn btn-primary" routerLink="/addemp" routerLinkActive="active">Add Employee</a></div>
             </div>
@@ -16,6 +18,9 @@
             <div class="col-sm-8">
             <div class="panel panel-primary">
   <!-- Default panel contents -->
+  <div class="row">
+        <div class="col-sm-2"></div>
+        </div>
   <div class="panel-heading">Employee List</div>
                     <table class="table table-bordered">
                     <thead class="bg-danger">
@@ -25,6 +30,7 @@
                         <th>NAME</th>
                         <th>EMAIL</th>
                         <th>PHONE</th>
+                        <th nowrap="true">ACTION</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,8 +40,9 @@
                             <td>{{emp.name}}</td>
                             <td>{{emp.email}}</td>
                             <td>{{emp.phone}}</td>
+                            <td><button class="btn btn-primary" routerLink="/empdetail/{{emp.empid}}" routerLinkActive="active">Detail</button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger" (click)="onClickRemove(emp)">Delete</button></td>
                         </tr>
-                        </tbody>
+                    </tbody>
                 </table>
                 </div>
                 </div>
