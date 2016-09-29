@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { EmployeeService } from '../../Services/employee.service';
+import { Employee } from '../../Model/employee';
+import {Router} from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -10,14 +12,16 @@ import { EmployeeService } from '../../Services/employee.service';
 })
 export class EmployeeComponent {
 	constructor(
-    private employeeService: EmployeeService) { }
+    private employeeService: EmployeeService,private router: Router) { }
+  employee = new Employee();
+  
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.employeeService.create(name)
-      .then(employee => {
-        this.employees.push(employee);
-      });
+
+  addEmployee(employee: Employee){
+   console.log(this.employee);
+   this.employeeService.add(this.employee);
+   this.router.navigateByUrl('/');
   }
+
+  
  }
