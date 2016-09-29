@@ -13,4 +13,13 @@ export class EmployeeService {
       setTimeout(resolve, 2000)) // delay 2 seconds
       .then(() => this.getEmployees());
   }
+
+add(emp){
+  EmpList.push(emp);
+  }
+
+  getEmployee(empid): Promise<Employee> {
+  return this.getEmployees()
+             .then(employees => employees.find(employee => employee.empid === empid));
+}
 }

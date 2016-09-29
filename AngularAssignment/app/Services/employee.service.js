@@ -24,6 +24,13 @@ var EmployeeService = (function () {
         }) // delay 2 seconds
             .then(function () { return _this.getEmployees(); });
     };
+    EmployeeService.prototype.add = function (emp) {
+        employee_list_1.EmpList.push(emp);
+    };
+    EmployeeService.prototype.getEmployee = function (empid) {
+        return this.getEmployees()
+            .then(function (employees) { return employees.find(function (employee) { return employee.empid === empid; }); });
+    };
     EmployeeService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
